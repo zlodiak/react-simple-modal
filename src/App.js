@@ -6,14 +6,10 @@ import Page2 from './components/page2/Page2';
 import Modal from './components/modal/index';
 
 function App() {
-  const [modalShow, setModalShow] = useState('false');
+  const [modalState, setModalState] = useState(false);
 
-  const showModal = e => {
-    setModalShow('true');
-  };
-
-  const closeModal = () => {
-    setModalShow('false');
+  const toggleModal = e => {
+    setModalState(e);
   }
 
   return (
@@ -30,10 +26,10 @@ function App() {
         </main>
         <footer>
           <hr/>
-          {modalShow}
-          <button  onClick={ e => showModal() }> show Modal </button>
+          {modalState}
+          <button  onClick={ () => toggleModal(true) }> show Modal </button>
         </footer>      
-        <Modal show={ modalShow } closeCallback={ closeModal }>modal message</Modal>
+        <Modal show={ modalState } toggleCallback={ toggleModal }>modal message</Modal>
       </div>
     </BrowserRouter>
   );
