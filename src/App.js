@@ -27,7 +27,7 @@ function App() {
         <footer>
           <hr/>
           {modalState}
-          <button  onClick={ () => toggleModal(true) }> show Modal </button>
+          <button  onClick={ () => toggleModal(true) }> show global Modal </button>
         </footer>      
         <Modal show={ modalState } toggleCallback={ toggleModal }>modal message</Modal>
       </div>
